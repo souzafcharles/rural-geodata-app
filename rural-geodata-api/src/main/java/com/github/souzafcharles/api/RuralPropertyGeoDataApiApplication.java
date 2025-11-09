@@ -1,5 +1,6 @@
 package com.github.souzafcharles.api;
 
+import com.github.souzafcharles.api.Config.LoadEnvironment;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RuralPropertyGeoDataApiApplication {
 
 	public static void main(String[] args) {
+        LoadEnvironment.loadEnv();
 		SpringApplication.run(RuralPropertyGeoDataApiApplication.class, args);
 	}
 
