@@ -45,11 +45,13 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Flyway Migration -->
+        <!-- Liquibase Migration -->
         <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>5.0.1</version>
         </dependency>
+
 
         <!-- Environment Variables Loader -->
         <dependency>

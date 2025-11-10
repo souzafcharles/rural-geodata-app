@@ -1,0 +1,822 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: charles
+      changes:
+        - createTable:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: property_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: latitude
+                  type: DOUBLE PRECISION
+              - column:
+                  name: longitude
+                  type: DOUBLE PRECISION
+              - column:
+                  name: area_hectares
+                  type: DOUBLE PRECISION
+
+  - changeSet:
+      id: 2
+      author: charles
+      changes:
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda Esperança
+              - column:
+                  name: latitude
+                  value: -15.841
+              - column:
+                  name: longitude
+                  value: -47.924
+              - column:
+                  name: area_hectares
+                  value: 120.5
+
+  - changeSet:
+      id: 3
+      author: charles
+      changes:
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Sítio do Pica-Pau Amarelo
+              - column:
+                  name: latitude
+                  value: -23.5505
+              - column:
+                  name: longitude
+                  value: -46.6333
+              - column:
+                  name: area_hectares
+                  value: 45.2
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Rancho do Peão
+              - column:
+                  name: latitude
+                  value: -22.9068
+              - column:
+                  name: longitude
+                  value: -43.1729
+              - column:
+                  name: area_hectares
+                  value: 78.9
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Chácara São José
+              - column:
+                  name: latitude
+                  value: -19.9167
+              - column:
+                  name: longitude
+                  value: -43.9345
+              - column:
+                  name: area_hectares
+                  value: 32.1
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda Nova Vida
+              - column:
+                  name: latitude
+                  value: -12.9714
+              - column:
+                  name: longitude
+                  value: -38.5014
+              - column:
+                  name: area_hectares
+                  value: 156.7
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Estância do Sol
+              - column:
+                  name: latitude
+                  value: -30.0277
+              - column:
+                  name: longitude
+                  value: -51.2287
+              - column:
+                  name: area_hectares
+                  value: 89.3
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Sítio das Flores
+              - column:
+                  name: latitude
+                  value: -15.7801
+              - column:
+                  name: longitude
+                  value: -47.9292
+              - column:
+                  name: area_hectares
+                  value: 23.8
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda Boa Vista
+              - column:
+                  name: latitude
+                  value: -21.7578
+              - column:
+                  name: longitude
+                  value: -43.3507
+              - column:
+                  name: area_hectares
+                  value: 234.5
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Rancho Alegre
+              - column:
+                  name: latitude
+                  value: -16.6809
+              - column:
+                  name: longitude
+                  value: -49.2533
+              - column:
+                  name: area_hectares
+                  value: 67.4
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Chácara do Lago
+              - column:
+                  name: latitude
+                  value: -23.5489
+              - column:
+                  name: longitude
+                  value: -46.6388
+              - column:
+                  name: area_hectares
+                  value: 15.6
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda Santa Rita
+              - column:
+                  name: latitude
+                  value: -8.0476
+              - column:
+                  name: longitude
+                  value: -34.8770
+              - column:
+                  name: area_hectares
+                  value: 178.2
+
+  - changeSet:
+      id: 4
+      author: charles
+      changes:
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Sítio do Sossego
+              - column:
+                  name: latitude
+                  value: -22.8864
+              - column:
+                  name: longitude
+                  value: -43.1036
+              - column:
+                  name: area_hectares
+                  value: 28.9
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda do Bosque
+              - column:
+                  name: latitude
+                  value: -19.9200
+              - column:
+                  name: longitude
+                  value: -43.9377
+              - column:
+                  name: area_hectares
+                  value: 95.3
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Rancho Sereno
+              - column:
+                  name: latitude
+                  value: -15.5959
+              - column:
+                  name: longitude
+                  value: -56.0969
+              - column:
+                  name: area_hectares
+                  value: 142.7
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Chácara Primavera
+              - column:
+                  name: latitude
+                  value: -23.5502
+              - column:
+                  name: longitude
+                  value: -46.6343
+              - column:
+                  name: area_hectares
+                  value: 19.4
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda Paraíso
+              - column:
+                  name: latitude
+                  value: -12.9770
+              - column:
+                  name: longitude
+                  value: -38.5020
+              - column:
+                  name: area_hectares
+                  value: 205.8
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Estância das Águas
+              - column:
+                  name: latitude
+                  value: -30.0331
+              - column:
+                  name: longitude
+                  value: -51.2300
+              - column:
+                  name: area_hectares
+                  value: 76.1
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Sítio Harmonia
+              - column:
+                  name: latitude
+                  value: -15.7934
+              - column:
+                  name: longitude
+                  value: -47.8827
+              - column:
+                  name: area_hectares
+                  value: 34.2
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda Sol Nascente
+              - column:
+                  name: latitude
+                  value: -21.7667
+              - column:
+                  name: longitude
+                  value: -43.3667
+              - column:
+                  name: area_hectares
+                  value: 167.9
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Rancho Verde
+              - column:
+                  name: latitude
+                  value: -16.7167
+              - column:
+                  name: longitude
+                  value: -49.3000
+              - column:
+                  name: area_hectares
+                  value: 88.5
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Chácara dos Pássaros
+              - column:
+                  name: latitude
+                  value: -23.5450
+              - column:
+                  name: longitude
+                  value: -46.6410
+              - column:
+                  name: area_hectares
+                  value: 22.7
+
+  - changeSet:
+      id: 5
+      author: charles
+      changes:
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda da Colina
+              - column:
+                  name: latitude
+                  value: -8.0543
+              - column:
+                  name: longitude
+                  value: -34.8813
+              - column:
+                  name: area_hectares
+                  value: 134.6
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Sítio Recanto
+              - column:
+                  name: latitude
+                  value: -22.9012
+              - column:
+                  name: longitude
+                  value: -43.0945
+              - column:
+                  name: area_hectares
+                  value: 41.3
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda do Vale
+              - column:
+                  name: latitude
+                  value: -19.9150
+              - column:
+                  name: longitude
+                  value: -43.9300
+              - column:
+                  name: area_hectares
+                  value: 112.4
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Rancho dos Sonhos
+              - column:
+                  name: latitude
+                  value: -15.6100
+              - column:
+                  name: longitude
+                  value: -56.0800
+              - column:
+                  name: area_hectares
+                  value: 98.7
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Chácara Feliz
+              - column:
+                  name: latitude
+                  value: -23.5520
+              - column:
+                  name: longitude
+                  value: -46.6350
+              - column:
+                  name: area_hectares
+                  value: 17.9
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda Aurora
+              - column:
+                  name: latitude
+                  value: -12.9745
+              - column:
+                  name: longitude
+                  value: -38.5045
+              - column:
+                  name: area_hectares
+                  value: 189.3
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Estância do Luar
+              - column:
+                  name: latitude
+                  value: -30.0289
+              - column:
+                  name: longitude
+                  value: -51.2290
+              - column:
+                  name: area_hectares
+                  value: 67.8
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Sítio das Pedras
+              - column:
+                  name: latitude
+                  value: -15.7856
+              - column:
+                  name: longitude
+                  value: -47.8765
+              - column:
+                  name: area_hectares
+                  value: 29.5
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda das Palmeiras
+              - column:
+                  name: latitude
+                  value: -21.7556
+              - column:
+                  name: longitude
+                  value: -43.3556
+              - column:
+                  name: area_hectares
+                  value: 145.2
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Rancho da Paz
+              - column:
+                  name: latitude
+                  value: -16.7256
+              - column:
+                  name: longitude
+                  value: -49.2656
+              - column:
+                  name: area_hectares
+                  value: 79.6
+
+  - changeSet:
+      id: 6
+      author: charles
+      changes:
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Chácara do Céu
+              - column:
+                  name: latitude
+                  value: -23.5478
+              - column:
+                  name: longitude
+                  value: -46.6399
+              - column:
+                  name: area_hectares
+                  value: 24.1
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda do Horizonte
+              - column:
+                  name: latitude
+                  value: -8.0499
+              - column:
+                  name: longitude
+                  value: -34.8799
+              - column:
+                  name: area_hectares
+                  value: 167.4
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Sítio Encantado
+              - column:
+                  name: latitude
+                  value: -22.8911
+              - column:
+                  name: longitude
+                  value: -43.1011
+              - column:
+                  name: area_hectares
+                  value: 36.7
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda dos Pinheiros
+              - column:
+                  name: latitude
+                  value: -19.9188
+              - column:
+                  name: longitude
+                  value: -43.9322
+              - column:
+                  name: area_hectares
+                  value: 103.8
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Rancho das Estrelas
+              - column:
+                  name: latitude
+                  value: -15.5988
+              - column:
+                  name: longitude
+                  value: -56.0922
+              - column:
+                  name: area_hectares
+                  value: 124.3
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Chácara das Rosas
+              - column:
+                  name: latitude
+                  value: -23.5533
+              - column:
+                  name: longitude
+                  value: -46.6367
+              - column:
+                  name: area_hectares
+                  value: 20.8
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda Lua Cheia
+              - column:
+                  name: latitude
+                  value: -12.9722
+              - column:
+                  name: longitude
+                  value: -38.5011
+              - column:
+                  name: area_hectares
+                  value: 198.5
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Estância dos Ventos
+              - column:
+                  name: latitude
+                  value: -30.0311
+              - column:
+                  name: longitude
+                  value: -51.2278
+              - column:
+                  name: area_hectares
+                  value: 71.9
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Sítio do Canto
+              - column:
+                  name: latitude
+                  value: -15.7889
+              - column:
+                  name: longitude
+                  value: -47.8700
+              - column:
+                  name: area_hectares
+                  value: 31.4
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda das Águas Claras
+              - column:
+                  name: latitude
+                  value: -21.7611
+              - column:
+                  name: longitude
+                  value: -43.3611
+              - column:
+                  name: area_hectares
+                  value: 156.7
+
+  - changeSet:
+      id: 7
+      author: charles
+      changes:
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Rancho do Campo
+              - column:
+                  name: latitude
+                  value: -16.7111
+              - column:
+                  name: longitude
+                  value: -49.2711
+              - column:
+                  name: area_hectares
+                  value: 84.2
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Chácara do Rio
+              - column:
+                  name: latitude
+                  value: -23.5499
+              - column:
+                  name: longitude
+                  value: -46.6380
+              - column:
+                  name: area_hectares
+                  value: 26.3
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda do Céu Azul
+              - column:
+                  name: latitude
+                  value: -8.0478
+              - column:
+                  name: longitude
+                  value: -34.8789
+              - column:
+                  name: area_hectares
+                  value: 142.9
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Sítio da Montanha
+              - column:
+                  name: latitude
+                  value: -22.8867
+              - column:
+                  name: longitude
+                  value: -43.0967
+              - column:
+                  name: area_hectares
+                  value: 39.6
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda do Lago
+              - column:
+                  name: latitude
+                  value: -19.9222
+              - column:
+                  name: longitude
+                  value: -43.9356
+              - column:
+                  name: area_hectares
+                  value: 118.7
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Rancho das Flores
+              - column:
+                  name: latitude
+                  value: -15.6056
+              - column:
+                  name: longitude
+                  value: -56.0856
+              - column:
+                  name: area_hectares
+                  value: 132.1
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Chácara do Sol
+              - column:
+                  name: latitude
+                  value: -23.5511
+              - column:
+                  name: longitude
+                  value: -46.6339
+              - column:
+                  name: area_hectares
+                  value: 18.5
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Fazenda das Estrelas
+              - column:
+                  name: latitude
+                  value: -12.9699
+              - column:
+                  name: longitude
+                  value: -38.4999
+              - column:
+                  name: area_hectares
+                  value: 176.3
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Estância da Serra
+              - column:
+                  name: latitude
+                  value: -30.0256
+              - column:
+                  name: longitude
+                  value: -51.2256
+              - column:
+                  name: area_hectares
+                  value: 93.4
+        - insert:
+            tableName: rural_properties
+            columns:
+              - column:
+                  name: property_name
+                  value: Sítio dos Sabiás
+              - column:
+                  name: latitude
+                  value: -15.7822
+              - column:
+                  name: longitude
+                  value: -47.8656
+              - column:
+                  name: area_hectares
+                  value: 27.8
