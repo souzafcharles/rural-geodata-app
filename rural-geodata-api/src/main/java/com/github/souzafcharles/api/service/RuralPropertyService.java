@@ -28,32 +28,29 @@ public class RuralPropertyService {
 
     @Transactional(readOnly = true)
     public RuralPropertyResponseDTO findById(Long id) {
-        RuralProperty entity = repository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException(RuralPropertyMessages.PROPERTY_NOT_FOUND));
+        RuralProperty entity = repository.findById(id).orElseThrow(() -> new EntityNotFoundException(RuralPropertyMessages.PROPERTY_NOT_FOUND));
         return new RuralPropertyResponseDTO(entity);
     }
 
     @Transactional
     public RuralPropertyResponseDTO insert(RuralPropertyRequestDTO dto) {
-        RuralProperty entity = new RuralProperty();
-        entity.setName(dto.name());
-        entity.setLatitude(dto.latitude());
-        entity.setLongitude(dto.longitude());
-        entity.setAreaHectares(dto.areaHectares());
+        RuralProperty entity = new RuralProperty(
+                dto.name(),
+                dto.latitude(),
+                dto.longitude(),
+                dto.areaHectares()
+        );
         entity = repository.save(entity);
         return new RuralPropertyResponseDTO(entity);
     }
 
     @Transactional
     public RuralPropertyResponseDTO update(Long id, RuralPropertyRequestDTO dto) {
-        RuralProperty entity = repository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException(RuralPropertyMessages.PROPERTY_NOT_FOUND));
-
+        RuralProperty entity = repository.findById(id).orElseThrow(() -> new EntityNotFoundException(RuralPropertyMessages.PROPERTY_NOT_FOUND));
         entity.setName(dto.name());
         entity.setLatitude(dto.latitude());
         entity.setLongitude(dto.longitude());
         entity.setAreaHectares(dto.areaHectares());
-
         entity = repository.save(entity);
         return new RuralPropertyResponseDTO(entity);
     }

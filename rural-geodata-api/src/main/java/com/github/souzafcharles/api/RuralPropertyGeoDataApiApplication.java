@@ -1,6 +1,6 @@
 package com.github.souzafcharles.api;
 
-import com.github.souzafcharles.api.Config.LoadEnvironment;
+import com.github.souzafcharles.api.config.LoadEnvironment;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

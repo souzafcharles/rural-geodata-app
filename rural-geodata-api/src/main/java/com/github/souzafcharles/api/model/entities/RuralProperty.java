@@ -1,7 +1,8 @@
 package com.github.souzafcharles.api.model.entities;
 
-
+import com.github.souzafcharles.api.util.RuralPropertyMessages;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 import java.util.Objects;
 
@@ -13,19 +14,33 @@ public class RuralProperty {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "property_name")
+    @Column(name = "property_name", nullable = false)
+    @NotBlank(message = RuralPropertyMessages.PROPERTY_NAME_REQUIRED)
+    @Size(max = 255, message = RuralPropertyMessages.PROPERTY_NAME_SIZE_EXCEEDED)
     private String name;
 
     @Column(name = "latitude")
+    @DecimalMin(value = "-90.0", message = RuralPropertyMessages.LATITUDE_RANGE_INVALID)
+    @DecimalMax(value = "90.0", message = RuralPropertyMessages.LATITUDE_RANGE_INVALID)
     private Double latitude;
 
     @Column(name = "longitude")
+    @DecimalMin(value = "-180.0", message = RuralPropertyMessages.LONGITUDE_RANGE_INVALID)
+    @DecimalMax(value = "180.0", message = RuralPropertyMessages.LONGITUDE_RANGE_INVALID)
     private Double longitude;
 
     @Column(name = "area_hectares")
+    @Positive(message = RuralPropertyMessages.AREA_POSITIVE_REQUIRED)
     private Double areaHectares;
 
     public RuralProperty() {}
+
+    public RuralProperty(String name, Double latitude, Double longitude, Double areaHectares) {
+        this.name = name;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.areaHectares = areaHectares;
+    }
 
     public Long getId() {
         return id;
@@ -71,11 +86,14 @@ public class RuralProperty {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         RuralProperty that = (RuralProperty) o;
-        return Objects.equals(id, that.id) && Objects.equals(latitude, that.latitude) && Objects.equals(longitude, that.longitude);
+        return Objects.equals(id, that.id) &&
+                Objects.equals(latitude, that.latitude) &&
+                Objects.equals(longitude, that.longitude);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, latitude, longitude);
     }
+
 }

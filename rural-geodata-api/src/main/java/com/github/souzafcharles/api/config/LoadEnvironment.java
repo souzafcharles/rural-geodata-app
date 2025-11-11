@@ -1,4 +1,4 @@
-package com.github.souzafcharles.api.Config;
+package com.github.souzafcharles.api.config;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
