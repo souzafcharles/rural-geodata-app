@@ -47,6 +47,64 @@ A complete full-stack application for managing rural properties with geographic 
 
 ---
 
+## API Testing with Postman
+
+### Complete Test Collection
+
+A comprehensive Postman collection is included for testing all API endpoints and validation scenarios:
+
+**File:** `RuralProperty-API-Test-Collection.json`
+
+### Test Coverage
+
+| Test Category | Scenarios | Description |
+|---------------|-----------|-------------|
+| **Health Checks** | ✅ API Status | Verify API is running |
+| **GET Operations** | ✅ List All, Get by ID, Error Cases | Complete read operation testing |
+| **POST Operations** | ✅ Create with Validation | All constraint validations tested |
+| **PUT Operations** | ✅ Update Scenarios | Modify existing properties |
+| **DELETE Operations** | ✅ Remove Properties | Delete functionality |
+| **Edge Cases** | ✅ Boundaries, Performance | Comprehensive scenario testing |
+
+### Validation Testing
+
+The collection includes tests for all validation rules:
+- ✅ **Name Validation**: Required field, max 255 characters
+- ✅ **Coordinate Ranges**: Latitude (-90 to 90), Longitude (-180 to 180)
+- ✅ **Area Validation**: Positive values required
+- ✅ **Error Handling**: Proper HTTP status codes and messages
+
+### How to Use
+
+1. **Import Collection** into Postman
+2. **Set Environment Variable**: `baseUrl = http://localhost:8080`
+3. **Run Tests**: Execute individual requests or complete test suites
+4. **Verify Responses**: Check status codes and validation messages
+
+### Example Test Scenarios
+
+```http
+# Valid Creation
+POST /api/properties
+{
+  "name": "Green Valley Farm",
+  "latitude": -15.841,
+  "longitude": -47.924,
+  "areaHectares": 120.5
+}
+
+# Validation Error - Invalid Latitude
+POST /api/properties  
+{
+  "name": "Invalid Farm",
+  "latitude": 95.0,  # Invalid: > 90
+  "longitude": -46.6333,
+  "areaHectares": 150.75
+}
+```
+
+---
+
 ## Architecture and Design Patterns
 
 ### Backend - Layered Architecture
@@ -215,6 +273,18 @@ npm run serve
 -- via Liquibase migrations with sample data
 ```
 
+### 4. API Testing (Postman)
+
+```bash
+# Import the Postman collection
+File → Import → Select 'RuralProperty-API-Test-Collection.json'
+
+# Set environment variable
+baseUrl = http://localhost:8080
+
+# Run test suites to verify API functionality
+```
+
 ---
 
 ## Usage Examples
@@ -283,6 +353,7 @@ Content-Type: application/json
 | Geographic Data | ✅ Complete | Coordinate storage and validation |
 | Responsive Design | ✅ Complete | Mobile-friendly interface |
 | Error Handling | ✅ Complete | User-friendly messages |
+| API Testing | ✅ Complete | Postman collection included |
 
 ### Project Highlights
 
@@ -290,12 +361,13 @@ Content-Type: application/json
 - **Validation Consistency**: Same rules applied on both layers;
 - **Modern Stack**: Current versions of Spring Boot and Vue.js;
 - **Production Ready**: Proper error handling and validation;
+- **Comprehensive Testing**: Complete Postman test collection;
 - **Documentation**: Complete API documentation with OpenAPI.
 
 ## References
 
-Build & Run. (n.d.). *Java Spring Boot Tutorials Playlist* [Video playlist]. YouTube. https://www.youtube.com/watch?v=Tnl4YnB6E54&list=PLxCh3SsamNs62j6T7bv6f1_1j9H9pEzkC&ab_channel=Build%26Run
+Build & Run. (n.d.). *Investment Aggregator* [Video playlist]. YouTube. https://www.youtube.com/watch?v=Tnl4YnB6E54&list=PLxCh3SsamNs62j6T7bv6f1_1j9H9pEzkC&ab_channel=Build%26Run
 
-Samuelson Brito. (n.d.). VueJS - Consuming a REST API [Video playlist]. YouTube. https://www.youtube.com/playlist?list=PLWd_VnthxxLeRdaga093nbR64dALpbPwI
+Samuelson Brito. (n.d.). *VueJS - Consuming a REST API* [Video playlist]. YouTube. https://www.youtube.com/playlist?list=PLWd_VnthxxLeRdaga093nbR64dALpbPwI
 
 Wellington de Oliveira. (n.d.). *Spring Boot and Angular* [Video playlist]. YouTube. https://www.youtube.com/watch?v=eTQmjY4oO_s&list=PLtII2Mw41oA0LLJgLVeyRWO5IPUtdfRth&index=15&ab_channel=WellingtondeOliveira

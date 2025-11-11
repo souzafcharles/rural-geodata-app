@@ -1,0 +1,447 @@
+{
+  "info": {
+    "name": "Rural Property GeoData API",
+    "description": "Complete test collection for Rural Property CRUD operations",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "item": [
+        {
+          "name": "Check API Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/properties",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties"]
+            },
+            "description": "Basic health check to verify API is running"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "GET Operations",
+      "item": [
+        {
+          "name": "Get All Properties",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/properties",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Property by ID - Valid",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/properties/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Property by ID - Not Found",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/properties/999",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties", "999"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Property by ID - Invalid ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/properties/abc",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties", "abc"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "POST Operations",
+      "item": [
+        {
+          "name": "Create Property - Valid",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Nova Fazenda Teste\",\n  \"latitude\": -23.5505,\n  \"longitude\": -46.6333,\n  \"areaHectares\": 150.75\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/properties",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Property - Missing Name",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"latitude\": -23.5505,\n  \"longitude\": -46.6333,\n  \"areaHectares\": 150.75\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/properties",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Property - Invalid Latitude",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Fazenda Latitude Inválida\",\n  \"latitude\": 95.0,\n  \"longitude\": -46.6333,\n  \"areaHectares\": 150.75\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/properties",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Property - Invalid Longitude",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Fazenda Longitude Inválida\",\n  \"latitude\": -23.5505,\n  \"longitude\": 190.0,\n  \"areaHectares\": 150.75\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/properties",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Property - Negative Area",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Fazenda Área Negativa\",\n  \"latitude\": -23.5505,\n  \"longitude\": -46.6333,\n  \"areaHectares\": -10.0\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/properties",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Property - Name Too Long",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Fazenda com nome extremamente longo que ultrapassa o limite de 255 caracteres permitidos pela validação do sistema de propriedades rurais com dados geográficos para teste de boundary conditions and validation rules in the API endpoints for rural property management system with geographic data storage\",\n  \"latitude\": -23.5505,\n  \"longitude\": -46.6333,\n  \"areaHectares\": 150.75\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/properties",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "PUT Operations",
+      "item": [
+        {
+          "name": "Update Property - Valid",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Fazenda Esperança Atualizada\",\n  \"latitude\": -15.841,\n  \"longitude\": -47.924,\n  \"areaHectares\": 200.0\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/properties/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Property - Not Found",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Fazenda Inexistente\",\n  \"latitude\": -15.841,\n  \"longitude\": -47.924,\n  \"areaHectares\": 200.0\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/properties/999",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties", "999"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Property - Validation Error",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"\",\n  \"latitude\": -95.0,\n  \"longitude\": 200.0,\n  \"areaHectares\": -5.0\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/properties/2",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties", "2"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "DELETE Operations",
+      "item": [
+        {
+          "name": "Delete Property - Valid",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/properties/3",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties", "3"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Property - Not Found",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/properties/999",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties", "999"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Property - Already Deleted",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/properties/3",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties", "3"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Edge Cases & Performance",
+      "item": [
+        {
+          "name": "Get All Properties - Large Dataset",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/properties",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties"]
+            },
+            "description": "Test performance with 50+ properties"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Property - Decimal Precision",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Fazenda Precisão Decimal\",\n  \"latitude\": -23.123456789,\n  \"longitude\": -46.987654321,\n  \"areaHectares\": 123.456789\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/properties",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Property - Boundary Values",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Fazenda Limites\",\n  \"latitude\": 90.0,\n  \"longitude\": -180.0,\n  \"areaHectares\": 0.0001\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/properties",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "properties"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}
