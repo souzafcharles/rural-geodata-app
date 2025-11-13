@@ -15,8 +15,11 @@ import java.util.List;
 @Service
 public class RuralPropertyService {
 
-    @Autowired
-    private RuralPropertyRepository repository;
+    private final RuralPropertyRepository repository;
+
+    public RuralPropertyService(RuralPropertyRepository repository) {
+        this.repository = repository;
+    }
 
     @Transactional(readOnly = true)
     public List<RuralPropertyResponseDTO> findAll() {

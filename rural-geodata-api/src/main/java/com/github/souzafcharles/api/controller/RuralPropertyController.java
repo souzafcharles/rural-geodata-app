@@ -20,8 +20,11 @@ import java.util.List;
 @Tag(name = RuralPropertyMessages.OPENAPI_TITLE, description = RuralPropertyMessages.OPENAPI_DESCRIPTION)
 public class RuralPropertyController {
 
-    @Autowired
-    private RuralPropertyService service;
+    private final RuralPropertyService service;
+
+    public RuralPropertyController(RuralPropertyService service) {
+        this.service = service;
+    }
 
     @Operation(summary = RuralPropertyMessages.SUMMARY_CREATE_PROPERTY, description = RuralPropertyMessages.DESCRIPTION_CREATE_PROPERTY)
     @PostMapping
