@@ -239,8 +239,8 @@ private Double areaHectares;
 # Navigate to backend directory
 cd rural-geodata-api
 
-# Configure database connection in .env file
-# DATABASE_URL=jdbc:postgresql://localhost:5432/ruralgeodata
+# Create and configure database connection in .env file
+# DATABASE_URL=jdbc:postgresql://localhost:5432/databasename
 # DATABASE_USERNAME=postgres  
 # DATABASE_PASSWORD=yourpassword
 
@@ -307,6 +307,20 @@ Content-Type: application/json
 #### 2. List All Properties
 ```http
 GET http://localhost:8080/api/properties
+
+{
+  "name": "Green Valley Farm",
+  "latitude": -15.841,
+  "longitude": -47.924,
+  "areaHectares": 120.5
+}
+
+{
+  "name": "Blue River Ranch",
+  "latitude": -16.052,
+  "longitude": -47.518,
+  "areaHectares": 85.3
+}
 ```
 
 #### 3. Update Property
